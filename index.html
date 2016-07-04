@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Revista</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="magazine">
+
+			<div class="page">
+				<div class="front">
+					<div class="content">
+						<h1>1</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quaerat doloremque repudiandae corporis eveniet fugit, dolorem minima. Quia, harum, architecto. Amet veniam suscipit optio mollitia, animi in ad laborum soluta.</p>
+					</div>
+				</div>
+				<div class="back">
+					<div class="content">
+						<h1>2</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quaerat doloremque repudiandae corporis eveniet fugit, dolorem minima. Quia, harum, architecto. Amet veniam suscipit optio mollitia, animi in ad laborum soluta.</p>
+						<h4>Lorem ipsum dolor.</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laborum rerum expedita doloremque quae, earum explicabo quidem, harum temporibus voluptates magnam ullam. Corrupti blanditiis sint accusantium laborum tempora facilis laboriosam!</p>
+					</div>					
+				</div>
+			</div>
+			<div class="page">
+				<div class="front">
+					<div class="content">
+						<h1>3</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quaerat doloremque repudiandae corporis eveniet fugit, dolorem minima. Quia, harum, architecto. Amet veniam suscipit optio mollitia, animi in ad laborum soluta.</p>
+					</div>
+				</div>
+				<div class="back">
+					<div class="content">
+						<h1>4</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quaerat doloremque repudiandae corporis eveniet fugit, dolorem minima. Quia, harum, architecto. Amet veniam suscipit optio mollitia, animi in ad laborum soluta.
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit nihil illum, voluptate quisquam numquam eos pariatur vitae, ducimus facere quasi corporis fugit praesentium vero nemo aspernatur asperiores provident debitis harum obcaecati voluptates cum earum doloremque alias! Ducimus officiis deserunt cumque esse cum architecto harum quo at id molestiae illo et quam repellat maiores, aliquam labore possimus nobis veniam dolor accusamus dolore sed, explicabo. Ipsa sequi itaque laboriosam, facere aspernatur. Modi commodi magnam, magni incidunt, repellendus soluta sed quaerat nesciunt impedit, obcaecati fuga! Expedita alias porro ratione amet libero iure doloremque rerum, neque eligendi ex totam fuga obcaecati voluptas voluptatum illum eius labore, voluptates reiciendis eveniet est nobis culpa! Ad eos quibusdam omnis nisi. Aut praesentium, aspernatur, voluptatibus, nostrum temporibus voluptate laborum distinctio ab eius ipsum ullam necessitatibus dolores, sed iure ducimus amet! Voluptas corrupti repellendus, pariatur libero nostrum animi dolore fugiat odio distinctio consequuntur corporis ipsa obcaecati, modi aut harum rerum vitae labore, ipsam iste. Molestiae dolorum possimus magni reprehenderit dolorem pariatur vel, obcaecati architecto laboriosam cupiditate consectetur tempora provident tempore nemo. Officiis blanditiis vero a ipsam quidem asperiores nesciunt nobis aut, eius. Nisi doloribus esse enim, sunt deleniti rem, soluta consequuntur dignissimos ut, corrupti, ex ipsam unde cumque ad?</p>
+						<h4>Lorem ipsum dolor.</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laborum rerum expedita doloremque quae, earum explicabo quidem, harum temporibus voluptates magnam ullam. Corrupti blanditiis sint accusantium laborum tempora facilis laboriosam!</p>
+					</div>					
+				</div>
+			</div>
+			<div class="page">
+				<div class="front">
+					<div class="content">
+						<h1>5</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quaerat doloremque repudiandae corporis eveniet fugit, dolorem minima. Quia, harum, architecto. Amet veniam suscipit optio mollitia, animi in ad laborum soluta.</p>
+					</div>
+				</div>
+				<div class="back">
+					<div class="content">
+						<h1>6</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quaerat doloremque repudiandae corporis eveniet fugit, dolorem minima. Quia, harum, architecto. Amet veniam suscipit optio mollitia, animi in ad laborum soluta.</p>
+						<h4>Lorem ipsum dolor.</h4>
+						<img class="img_responsive" src="http://ilarge.lisimg.com/image/650539/900full-tarja-turunen.jpg" alt="">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci laborum rerum expedita doloremque quae, earum explicabo quidem, harum temporibus voluptates magnam ullam. Corrupti blanditiis sint accusantium laborum tempora facilis laboriosam!</p>
+					</div>					
+				</div>
+			</div>
+
+
+	</div>
+
+	<nav class="navigator">
+		<ul>
+			<li><a id="back" href="#" class="btn back">Back</a></li>
+			<li><a id="list" href="#" class="btn list">List</a></li>
+			<li><a id="next" href="#" class="btn next">Next</a></li>
+		</ul>
+	</nav>
+
+	<script>
+		$(document).ready(function(){
+			var magazine = $('.magazine > .page');
+			magazine.each(function(index){
+				$(this).css('z-index',-+index);
+			});
+
+			$('.navigator #next').on('click touchstart',function(event){
+				event.preventDefault();
+				console.log(magazine);
+				magazine.each(function(){
+					if (!$(this).hasClass('visible')){
+						$(this).addClass('active visible');
+						return false;
+					}
+				});
+
+			});
+			$('.navigator #back').on('click touchstart',function(event){
+				event.preventDefault();
+				console.log(magazine);
+				$(magazine.reverse()).each(function(){
+					if ($(this).hasClass('visible')){
+						$(this).removeClass('active visible');
+						return false;
+					}
+				});
+			});
+		});
+	</script>
+
+</body>
+</html>
