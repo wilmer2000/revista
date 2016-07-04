@@ -93,7 +93,7 @@
 			$('.navigator #back').on('click touchstart',function(event){
 				event.preventDefault();
 				console.log(magazine);
-				$(magazine.reverse()).each(function(){
+				$(magazine.get().reverse()).each(function(){
 					if ($(this).hasClass('visible')){
 						$(this).removeClass('active visible');
 						return false;
