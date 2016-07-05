@@ -10,12 +10,12 @@ magazine.each(function(index){
 
 $('.navigator #next').on('click touchstart',function(event){
 	event.preventDefault();
-	next_();
+	back_();
 });
 
 $('.navigator #back').on('click touchstart',function(event){
 	event.preventDefault();
-	back_();
+	next_();
 });
 $('.navigator #list').on('click touchstart',function(event){
 	event.preventDefault();
