@@ -5,15 +5,43 @@
     font-family: 'Roboto', sans-serif;
     box-sizing:border-box;
 }
+a,a:hover,a:active,a:visited{text-decoration:none;color:inherit;}
+body{background:#34495e;padding:100px 0;    display: block;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    -webkit-transition: all 300ms ease-in;
+    -moz-transition: all 300ms ease-in;
+    -ms-transition: all 300ms ease-in;
+    -o-transition: all 300ms ease-in;
+    transition: all 300ms ease-in;}
+body.back__{background:#1a252f;}
+.img_responsive_height{width:auto;height:100%;display:block;}
 .img_responsive{width:100%;height:auto;display:block;}
 .magazine {
-    width: 100%;
+    width: 100%;max-width:1200px;
     height: 100%;
     margin: 0 auto;
-    position: absolute;
     top: 0;
     left: 0;
-    overflow:hidden;
+    overflow:hidden;float:none;
+    /* background:#ecf0f1; */
+    position:relative;
+    z-index: 0;
+    -webkit-transition: all 300ms ease-in;
+    -moz-transition: all 300ms ease-in;
+    -ms-transition: all 300ms ease-in;
+    -o-transition: all 300ms ease-in;
+    transition: all 300ms ease-in;
+
+}
+.magazine.back__ {
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity:0.6
 }
 .magazine>.page {
     width: 50%;
@@ -38,7 +66,22 @@
     -ms-transform: rotateY(0deg);
     transform: rotateY(0deg);
     transform-style: preserve-3d;
+    opacity: 0;
 }
+
+.magazine>.page>div.front:before{content:"";display:block;position:absolute;width:100px;height:100%;top:0;left:0;
+background: -moz-linear-gradient(left,  rgba(0,0,0,0.37) 0%, rgba(0,0,0,0) 100%);
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0.37) 0%,rgba(0,0,0,0) 100%);
+background: linear-gradient(to right,  rgba(0,0,0,0.37) 0%,rgba(0,0,0,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e000000', endColorstr='#00000000',GradientType=1 );opacity:0.5
+}
+.magazine>.page>div.back:before{content:"";display:block;position:absolute;width:100px;height:100%;top:0;right:0;
+background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.37) 100%);
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.37) 100%);
+background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.37) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#5e000000',GradientType=1 );opacity:0.5
+}
+
 .magazine>.page.active {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
@@ -55,13 +98,15 @@
     align-content: stretch;
     align-items: center;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background:#8bc34a;
+    width: auto;
+    height: inherit;
+    background:#fff;
     backface-visibility: hidden;
 }
 .magazine>.page .content {
   padding: 20px;
+  height:inherit;
+  width:inherit;
 }
 .magazine>.page>div.front{
 }
@@ -69,12 +114,25 @@
   transform: rotateY(180deg);
 }
 
+header{position:fixed;top:0;left:0;background:#2c3e50;z-index:2; }
 
-.navigator {position: absolute;z-index: 1;bottom: 10px;width: 100%;text-align: center;}
+.navigator {position: absolute;z-index: 1;bottom: 10px;width: auto;text-align: center;margin-left: -93px;left:50%;}
 .navigator ul {display: block;}
 .navigator ul li {display: inline-block;}
-.navigator li a {display: block;text-decoration: none;padding: 10px;}
+.navigator li a {display: block;text-decoration: none;padding: 10px;background: #27ae60;color:#34495e;width:60px;height:60px;line-height:60px;text-align:center;    box-shadow: 0 0 10px rgba(0,0,0,0.4);margin: 0;float: left;}
+.navigator li a:hover{background: #2ecc71;color:#34495e}
 
+.modal_cantidad {position:absolute;z-index:2;width:100%;height: 100%;box-shadow: 0 0 50px rgba(0,0,0,0.4);display:none;
+max-width: 400px;
+max-height: 400px;
+top: 50%;
+left: 50%;
+margin-top:-200px;
+margin-left:-200px;
+background:#ecf0f1;
+padding:20px;}
+.modal_cantidad nav{padding:0;margin:0;width:100%;height:100%;position:relative;}
+.modal_cantidad ul{padding:0;margin:0;width:100%;height:100%;position:absolute;overflow-y:auto;}
 @media (min-width: 768px) {
     .page {
         width: 50%;
