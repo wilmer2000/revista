@@ -5,7 +5,6 @@
 	<title>Revista</title>
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<link rel="stylesheet" href="css/main.css">
-	<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
 </head>
 <body>
 	<div class="magazine">
@@ -72,36 +71,8 @@
 		</ul>
 	</nav>
 
-	<script>
-		$(document).ready(function(){
-			var magazine = $('.magazine > .page');
-			magazine.each(function(index){
-				$(this).css('z-index',-+index);
-			});
-
-			$('.navigator #next').on('click touchstart',function(event){
-				event.preventDefault();
-				console.log(magazine);
-				magazine.each(function(){
-					if (!$(this).hasClass('visible')){
-						$(this).addClass('active visible');
-						return false;
-					}
-				});
-
-			});
-			$('.navigator #back').on('click touchstart',function(event){
-				event.preventDefault();
-				console.log(magazine);
-				$(magazine.get().reverse()).each(function(){
-					if ($(this).hasClass('visible')){
-						$(this).removeClass('active visible');
-						return false;
-					}
-				});
-			});
-		});
-	</script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
 
 </body>
 </html>
